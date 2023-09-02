@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+        integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <title>Seller's Adming Page</title>
+</head>
+
+<body>
+    
+
+    <div class="container">
+        <div id="main" class="card card-body">
+            
+            <form id="form">
+                <label for="sellingPrice">Selling Price:</label>
+                <input type="number" id="sprice" class="mr-2">
+
+                <label for="productName">Product Name</label>
+                <input type="text" id="prd_name" class="mr-2">
+
+                
+                <input type="submit" class="btn btn-dark" value="Add">
+            </form>
+            
+            <h1>Products</h1>
+            
+            <ul id="product-list">
+            
+            </ul>
+
+        </div>
+
+        
+        
+
+        <div class="container"> 
+            <h3 id="total"> </h3>
+        </div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
