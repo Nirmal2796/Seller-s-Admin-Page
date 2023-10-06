@@ -15,7 +15,7 @@ ul.addEventListener('click', removeUser);
 
 
 document.addEventListener('DOMContentLoaded',
-    axios.get("https://crudcrud.com/api/c846407c887d42bb8bd7d5b18e5c5dce/products")
+    axios.get("https://crudcrud.com/api/e3a52f0b834d4c49812af438db9d999d/products")
         .then(res => {
             
             //console.log(res.data);
@@ -50,11 +50,16 @@ function showUserOnScreen(obj) {
     li.appendChild(document.createTextNode(obj.prd_name));
 
     var del_btn = document.createElement('button');
-    del_btn.className = 'btn btn-danger btn-sm  delete';
+    del_btn.className = 'btn btn-danger btn-sm float-right delete margin-auto';
     del_btn.appendChild(document.createTextNode('Delete Product'));
 
 
     li.appendChild(del_btn);
+
+    li.style.padding = "2px"; 
+    li.style.margin = "5px";
+
+    
    
     ul.appendChild(li);
 
@@ -82,7 +87,7 @@ function onSubmit(e) {
 
         }
 
-        axios.post("https://crudcrud.com/api/c846407c887d42bb8bd7d5b18e5c5dce/products", product)
+        axios.post("https://crudcrud.com/api/e3a52f0b834d4c49812af438db9d999d/products", product)
             .then((response) => {
                 showUserOnScreen(response.data);
                 
@@ -109,7 +114,7 @@ function removeUser(e) {
 
         //localStorage.removeItem(email_key);
 
-        axios.get("https://crudcrud.com/api/c846407c887d42bb8bd7d5b18e5c5dce/products")
+        axios.get("https://crudcrud.com/api/e3a52f0b834d4c49812af438db9d999d/products")
             .then(res => {
 
                 for (let i in res.data) {
@@ -117,7 +122,7 @@ function removeUser(e) {
                         const id = res.data[i]._id;
                         //console.log(typeof(id));
                        
-                        axios.delete(`https://crudcrud.com/api/c846407c887d42bb8bd7d5b18e5c5dce/products/${id}`)
+                        axios.delete(`https://crudcrud.com/api/e3a52f0b834d4c49812af438db9d999d/products/${id}`)
                         ul.removeChild(li);
                         sum = sum - parseInt(res.data[i].sprice);
                         showTotal(sum);
